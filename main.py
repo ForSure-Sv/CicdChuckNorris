@@ -1,7 +1,6 @@
 import os
 from time import sleep
 from src.Chuck import ChuckNorris
-import random
 
 #def clear():
 #    sleep(3)
@@ -18,19 +17,18 @@ def close():
 def main():
     while True:
         print("""
-        1. get Joke
+        1. get Random number of Jokes
         2. get Specific Joke
-        3. get By catagory
+        3. get By catagory (only nerdy and explicit)
         4.exit
         """)
 
         menu = input()
     #    clear()  # clear the screen
-        num = random.randint(1,10)
         switcher = {
-            1: lambda x: ChuckNorris.getJoke(num),
-            2: lambda x: ChuckNorris.getSpecificJoke(),
-            3: lambda x: ChuckNorris.getByCatagory(), #only nerdy and explicit catagories
+            1: lambda x: ChuckNorris.getJokes(1),
+            2: lambda x: ChuckNorris.getJokes(2),
+            3: lambda x: ChuckNorris.getJokes(3), #only nerdy and explicit catagories
             4: lambda x: close(),
         }
         switcher.get(int(menu))(0)

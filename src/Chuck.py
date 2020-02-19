@@ -1,4 +1,5 @@
 import requests
+import random
 
 
 class ChuckNorris:
@@ -46,3 +47,15 @@ class ChuckNorris:
             ele = input()
             catagories.append(ele)
         print(ChuckNorris.ByCatagory(catagories)['value']['joke'])
+
+    @staticmethod
+    def getJokes(type):
+        if(type == 1):
+            num = random.randint(1, 10)
+            ChuckNorris.getJoke(num)
+
+        if(type == 2):
+            ChuckNorris.getSpecificJoke()
+
+        if(type == 3):
+            ChuckNorris.getByCatagory()
